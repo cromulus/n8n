@@ -1024,11 +1024,11 @@ export async function getBase(
 	executionTimeoutTimestamp?: number,
 ): Promise<IWorkflowExecuteAdditionalData> {
 	const urlBaseWebhook = WebhookHelpers.getWebhookBaseUrl();
-
+	const urlBaseTestWebhook = WebhookHelpers.getWebhookTestBaseUrl();
 	const timezone = config.getEnv('generic.timezone');
 	const webhookBaseUrl = urlBaseWebhook + config.getEnv('endpoints.webhook');
 	const webhookWaitingBaseUrl = urlBaseWebhook + config.getEnv('endpoints.webhookWaiting');
-	const webhookTestBaseUrl = urlBaseWebhook + config.getEnv('endpoints.webhookTest');
+	const webhookTestBaseUrl = urlBaseTestWebhook + config.getEnv('endpoints.webhookTest');
 
 	const encryptionKey = await UserSettings.getEncryptionKey();
 

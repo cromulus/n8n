@@ -678,7 +678,7 @@ export async function executeWebhook(
 }
 
 /**
- * Returns the base URL of the webhooks
+ * Returns the base URL of the production webhook
  *
  * @export
  * @returns
@@ -691,6 +691,28 @@ export function getWebhookBaseUrl() {
 	if (process.env.WEBHOOK_TUNNEL_URL !== undefined || process.env.WEBHOOK_URL !== undefined) {
 		// @ts-ignore
 		urlBaseWebhook = process.env.WEBHOOK_TUNNEL_URL || process.env.WEBHOOK_URL;
+	}
+	if (!urlBaseWebhook.endsWith('/')) {
+		urlBaseWebhook += '/';
+	}
+
+	return urlBaseWebhook;
+}
+
+/**
+ * Returns the base URL of the test webhook
+ *
+ * @export
+ * @returns
+ */
+ export function getWebhookTestBaseUrl() {
+	let urlBaseWebhook = GenericHelpers.getBaseUrl();
+
+	// We renamed WEBHOOK_TUNNEL_URL to WEBHOOK_URL. This is here to maintain
+	// backward compatibility. Will be deprecated and removed in the future.
+	if (process.env.WEBHOOK_TUNNEL_URL !== undefined || process.env.WEBHOOK_TEST_URL !== undefined) {
+		// @ts-ignore
+		urlBaseWebhook = process.env.WEBHOOK_TUNNEL_URL || process.env.WEBHOOK_TEST_URL;
 	}
 	if (!urlBaseWebhook.endsWith('/')) {
 		urlBaseWebhook += '/';
