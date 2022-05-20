@@ -446,6 +446,7 @@ export interface IN8nUISettings {
 	};
 	timezone: string;
 	urlBaseWebhook: string;
+	getWebhookTestUrl: string;
 	urlBaseEditor: string;
 	versionCli: string;
 	n8nMetadata?: {

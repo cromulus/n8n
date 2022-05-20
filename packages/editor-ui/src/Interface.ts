@@ -639,6 +639,7 @@ export interface IN8nUISettings {
 		oauth2: string;
 	};
 	urlBaseWebhook: string;
+	urlTestBaseWebhook: string;
 	versionCli: string;
 	n8nMetadata?: {
 		[key: string]: string | number | undefined;

@@ -708,7 +708,7 @@ export const store = new Vuex.Store({
 			return `${state.urlBaseWebhook}${state.endpointWebhook}`;
 		},
 		getWebhookTestUrl: (state): string => {
-			return `${state.urlBaseWebhook}${state.endpointWebhookTest}`;
+			return `${state.urlTestBaseWebhook}${state.endpointWebhookTest}`;
 		},
 
 		getStateIsDirty: (state) : boolean => {

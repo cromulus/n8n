@@ -260,6 +260,7 @@ class App {
 		this.endpointPresetCredentials = config.getEnv('credentials.overwrite.endpoint');
 
 		const urlBaseWebhook = WebhookHelpers.getWebhookBaseUrl();
+		const urlTestBaseWebhook = WebhookHelpers.getWebhookTestBaseUrl()
 		const telemetrySettings: ITelemetrySettings = {
 			enabled: config.getEnv('diagnostics.enabled'),
 		};
@@ -286,6 +287,7 @@ class App {
 			maxExecutionTimeout: this.maxExecutionTimeout,
 			timezone: this.timezone,
 			urlBaseWebhook,
+			urlTestBaseWebhook,
 			urlBaseEditor: getInstanceBaseUrl(),
 			versionCli: '',
 			oauthCallbackUrls: {
