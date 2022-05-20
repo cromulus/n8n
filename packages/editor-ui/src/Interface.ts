@@ -809,6 +809,7 @@ export interface IRootState {
 	selectedNodes: INodeUi[];
 	sessionId: string;
 	urlBaseWebhook: string;
+	urlTestBaseWebhook: string;
 	workflow: IWorkflowDb;
 	sidebarMenuItems: IMenuItem[];
 	instanceId: string;

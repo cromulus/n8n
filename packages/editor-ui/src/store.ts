@@ -77,6 +77,7 @@ const state: IRootState = {
 	selectedNodes: [],
 	sessionId: Math.random().toString(36).substring(2, 15),
 	urlBaseWebhook: 'http://localhost:5678/',
+	urlTestBaseWebhook: 'http://localhost:5678/',
 	workflow: {
 		id: PLACEHOLDER_EMPTY_WORKFLOW_ID,
 		name: '',
@@ -533,7 +534,6 @@ export const store = new Vuex.Store({
 		setEndpointWebhookTest (state, endpointWebhookTest: string) {
 			Vue.set(state, 'endpointWebhookTest', endpointWebhookTest);
 		},
-
 		setSaveDataErrorExecution (state, newValue: string) {
 			Vue.set(state, 'saveDataErrorExecution', newValue);
 		},
